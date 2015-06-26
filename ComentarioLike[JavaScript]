@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Apenas um teste</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="face2.css">
+</head>
+<body>
+	<table>
+		<tr>
+			<td><img src="Pirata_alma_negra.jpg" width="170" height="150"></td>
+			<td><b>Pirata Alma Negra</b></td>
+		</tr>
+	</table>
+
+	<p>
+		Sabe o mar morto? Quem matou fui eu!
+	</p>
+
+	<table>
+		<tr>
+			<td><div id="contaLike">0</div></td><td>people like this</td> 
+			<td><button id="like" onclick="somaLike()">Like</button></td>
+	</table>
+
+	<p>Comentários</p>
+
+	<div id="comentario"></div>
+	
+	<textarea cols="30"rows="5" id="textoComentado"></textarea>
+	<button id="botaoComentar" onclick="fazComentario()">Comentar</button>
+
+	<script>
+		var botaoLike = document.getElementById("like");
+
+		function somaLike(){
+			var contaLike = document.getElementById("contaLike");
+
+			var aux = contaLike.innerHTML;
+			aux++;
+			contaLike.innerHTML = aux;
+		}
+
+		var botaoComentar = document.getElementById("botaoComentar");
+		var textoComentado = document.getElementById("textoComentado");
+		var comentario = document.getElementById("comentario");
+
+		function fazComentario(){
+			comentario.innerHTML += textoComentado.value + "<br/>";
+		}
+	</script>
+</body>
+</html>
